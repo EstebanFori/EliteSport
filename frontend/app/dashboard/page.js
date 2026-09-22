@@ -179,7 +179,7 @@ function AdminPanel({ refreshDashboard }) {
             </form>
           </div>
           <div className="card">
-            <h3>Deportes registrados</h3>
+            <h3>Deportes disponibles</h3>
             {deportes.length === 0 ? <div className="empty">No hay deportes.</div> : (
               <div className="table-wrap"><table><thead><tr><th>Nombre</th><th>Estado</th><th>Acciones</th></tr></thead><tbody>
                 {deportes.map((d) => <tr key={d.id_deporte}><td>{d.nombre}</td><td><span className={`badge ${d.estado ? 'badge-success' : 'badge-danger'}`}>{d.estado ? 'Activo' : 'Inactivo'}</span></td><td><div className="action-row"><button className="btn btn-secondary btn-small" onClick={() => { setEditandoDeporte(d.id_deporte); setSportForm({ nombre: d.nombre, descripcion: d.descripcion || '', estado: d.estado }); }}>Editar</button><button className="btn btn-danger btn-small" onClick={() => eliminarDeporte(d.id_deporte)}>Eliminar</button></div></td></tr>)}
