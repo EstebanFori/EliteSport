@@ -259,7 +259,7 @@ function AdminPanel({ refreshDashboard }) {
             </form>
           </div>
           <div className="card">
-            <h3>Calendario de torneos</h3>
+            <h3>Torneos programados</h3>
             {torneos.length === 0 ? <div className="empty">No hay torneos.</div> : <div className="table-wrap"><table><thead><tr><th>Nombre</th><th>Fechas</th><th>Estado</th><th>Acción</th></tr></thead><tbody>{torneos.map((t) => <tr key={t.id_torneo}><td>{t.nombre}</td><td>{fmtDate(t.fecha_inicio)} → {fmtDate(t.fecha_fin)}</td><td>{t.estado}</td><td><button className="btn btn-danger btn-small" onClick={() => eliminarTorneo(t.id_torneo)}>Eliminar</button></td></tr>)}</tbody></table></div>}
           </div>
         </div>
