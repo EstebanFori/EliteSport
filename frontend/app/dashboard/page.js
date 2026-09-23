@@ -231,7 +231,7 @@ function AdminPanel({ refreshDashboard }) {
       {tab === 'equipos' && (
         <div className="grid-2">
           <div className="card">
-            <h3>Equipos registrados</h3>
+            <h3>Equipos disponibles</h3>
             {equipos.length === 0 ? <div className="empty">No hay equipos.</div> : <div className="table-wrap"><table><thead><tr><th>Equipo</th><th>Deporte</th><th>Categoría</th><th>Deportistas</th></tr></thead><tbody>{equipos.map((e) => <tr key={e.id_equipo}><td>{e.nombre}</td><td>{e.deporte}</td><td>{e.categoria}</td><td>{e.deportistas ?? '—'}</td></tr>)}</tbody></table></div>}
           </div>
           <div className="card">
